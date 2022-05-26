@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    image: phelix/web
+    container_name: phelix-web
+    command: python run.py
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - 5000:5000
+    env_file:
+      - ./.env.dev

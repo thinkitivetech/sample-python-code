@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Submisssion Details:</h1>
+                <p><b>Name:</b> {{ submission.fname }} {{ submission.lname }}</p>
+                <p><b>Submissions ID:</b> {{ submission.id }}</p>
+                <p><b>Subject:</b> {{ submission.subject }}</p>
+                <p><b>Email:</b> {{ submission.email }}</p>
+                <p><b>Message:</b> {{ submission.message }}</p>
+                <p><b>Created At:</b> {{ submission.created_at }}</p>
+                <a class="btn btn-primary" href="/admin/dashboard">Back</a>
+            </div>
+        </div>
+    </div>
+{% endblock%}
