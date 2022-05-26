@@ -1,5 +1,5 @@
-# phelix-test-task
-## Phelix-test-task
+# Company-test-task
+## Company-test-task
 Choose a self-explaining name for your project.
 
 ## Prerequisites
