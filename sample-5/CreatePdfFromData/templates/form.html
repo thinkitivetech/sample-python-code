@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h2>Form</h2>
+    <form action="{{ url_for('create_pdf') }}" method="post">
+        <h3>First Name</h3>    
+        <br>
+        <input type="text" name="first_name">
+        <br>
+        <h3>Last Name</h3>
+        <br>
+        <input type="text" name="last_name">
+        <br>
+        <h3>Date of Birth</h3>
+        <br>
+        <input type="date" name="dob">
+        <br>
+        <div>            
+            <h3>Gender</h3>
+            <label>
+            <input type="radio" name="gender" value="Male"> 
+              Male </label>
+            <br>
+            <label>
+            <input type="radio" name="gender" value="Female">  
+             Female  </label>
+            <br>
+        </div>  
+        <div>
+            <h3>Skills</h3>
+            <br>
+            <input type="checkbox" name="c" value="C">
+            <label>C</label>
+            <input type="checkbox" name="cpp" value="CPP">
+            <label>CPP</label>    
+            <input type="checkbox" name="java" value="Java">
+            <label>Java</label>
+            <input type="checkbox" name="python" value="Python">
+            <label>Python</label>
+            <br>
+        </div>  
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

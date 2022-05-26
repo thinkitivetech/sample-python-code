@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+        <p>First Name : {{data.first_name}} </p>
+        <br>
+        <p>Last Name : {{data.last_name}}</p>
+        <br>
+        <p>Date of Birth : {{data.dob}}</p>
+        <br>            
+        <p>Gender :  {{data.gender}}</p>
+        <br>  
+        <p>Skills :</p>
+        <p> {% if 'c' in data %}  &#9745; {% else %} &#9744; {% endif %} C &nbsp; 
+            {% if 'cpp' in data %}  &#9745; {% else %} &#9744; {% endif %} CPP &nbsp;
+            {% if 'java' in data %}  &#9745; {% else %} &#9744; {% endif %} Java &nbsp;
+            {% if 'python' in data %}  &#9745; {% else %} &#9744; {% endif %} Python &nbsp; </p>            
+        <br>
+</body>
+</html>

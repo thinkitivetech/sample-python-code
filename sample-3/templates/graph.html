@@ -1,0 +1,161 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+    <title>Graph</title>
+  </head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<body>
+<div>
+   <div>
+      <canvas id="ageGraph" height="250", width="250"></canvas>
+      <h3 style="text-align: center;"> age </h3>
+   </div>
+   <br>
+   <div>
+    <canvas id="eduGraph" height="250" width="250"></canvas>
+    <h3 style="text-align: center;">education</h3>
+   </div>
+   <div>
+     <canvas id = "favColorGraph" height="250" width="250"></canvas>
+     <h3 style="text-align: center;">fav color</h3>
+   </div>
+   <div>
+    <canvas id = "nationalityGraph" height="250" width="250"></canvas>
+    <h3 style="text-align: center;"> nationality</h3>
+  </div>
+  <div>
+    <canvas id = "incomeGraph" height="250" width="250"></canvas>
+    <h3 style="text-align: center;">income</h3>
+  </div>
+
+ 
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script>
+     var final_label = {{ label_list | tojson }};
+
+     var final_count = {{ count_list | tojson }};
+
+     const ctx1 = document.getElementById('ageGraph').getContext('2d');
+     const ctx2 = document.getElementById('eduGraph').getContext('2d');
+     const ctx3 = document.getElementById('favColorGraph').getContext('2d');
+     const ctx4 = document.getElementById('nationalityGraph').getContext('2d');
+     const ctx5 = document.getElementById('incomeGraph').getContext('2d');
+
+     const ageGraph = new Chart(ctx1, {
+       type: 'pie',
+       data: {
+         labels: final_label[0],
+         datasets: [{
+           label: 'age graph',
+           data: final_count[0],
+
+           backgroundColor: [
+             'red',
+             'green',
+             'orange',
+            ],
+              borderWidth: 1
+            }]
+       },
+       options:{
+         maintainAspectRatio : false,
+       }
+     });
+    const eduGraph = new Chart(ctx2, {
+       type: 'polarArea',
+       data: {
+         labels: final_label[1],
+         datasets: [{
+           label: 'edu graph',
+           data: final_count[1],
+
+           backgroundColor: [
+             'red',
+             'green',
+             'orange',
+            ],
+              borderWidth: 1
+            }]
+      },
+      options:{
+        maintainAspectRatio : false,
+      }
+    });
+
+    const favColorGraph = new Chart(ctx3, {
+       type: 'doughnut',
+       data: {
+         labels: final_label[2],
+         datasets: [{
+           label: 'fav color graph',
+           data: final_count[2],
+
+           backgroundColor: [
+             'red',
+             'green',
+             'orange'
+            ],
+              borderWidth: 1
+            }]
+      },
+      options:{
+        maintainAspectRatio : false,
+      }
+    });
+
+    const nationalityGraph = new Chart(ctx4, {
+       type: 'pie',
+       data: {
+         labels: final_label[3],
+         datasets: [{
+           label: 'nationality graph',
+           data: final_count[3],
+
+           backgroundColor: [
+             'yellow',
+             'green',
+             'red'
+            ],
+              borderWidth: 1
+            }]
+      },
+      options:{
+        maintainAspectRatio : false,
+      }
+    });
+    const incomeGraph = new Chart(ctx5, {
+       type: 'doughnut',
+       data: {
+         labels: final_label[4],
+         datasets: [{
+           label: 'income graph',
+           data: final_count[4],
+
+           backgroundColor: [
+             'red',
+             'green',
+             'orange',
+            ],
+              borderWidth: 1
+            }]
+      },
+      options:{
+        maintainAspectRatio : false,
+      }
+    });
+
+</script>
+</body>
+</html>
